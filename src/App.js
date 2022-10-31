@@ -1,25 +1,46 @@
-import logo from './logo.svg';
 import './App.css';
-
+import FlashcardList from './FlashcardList';
+import React, {useState} from 'react';
 function App() {
+  const [flashcards, setFlashcards] = useState(FLASHCARD_LIST)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FlashcardList flashcards = {flashcards} ></FlashcardList>
   );
 }
+
+
+
+const FLASHCARD_LIST = 
+[
+    {
+        "id": 1,
+        "category": "Art",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which time signature is commonly known as &ldquo;Cut Time?&rdquo;",
+        "answer": "2/2",
+        "options": [
+            "4/4",
+            "6/8",
+            "3/4",
+            "2/2"
+        ]
+    },
+    {
+        "id" : 2, 
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which internet company began life as an online bookstore called &#039;Cadabra&#039;?",
+        "answer": "Amazon",
+        "options": [
+            "eBay",
+            "Overstock",
+            "Shopify",
+            "Amazon"
+        ]
+    },
+]
+
 
 export default App;
